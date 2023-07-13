@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const contextTodo = createContext();
+const contextTodo = createContext('light',()=>{});
 
 export default contextTodo;

@@ -3,8 +3,13 @@ import contextTodo from './context/context'
 import { REMOVE_TODO } from './action.types'
 
 function DisplayNotes() {
-    const {todos,dispatch}  =useContext(contextTodo)
+    const {todos,dispatch,themes}  =useContext(contextTodo)
+    const [themeMode,setThemeMode]=themes
+ 
   return (
+    <>
+    <button className='bg-red-600' onClick={()=>setThemeMode(themeMode === 'light' ?'dark':'light')}>{themeMode}</button>
+   
     <div className='grid grid-cols-3 gap-1 m-10'>
         {
             todos.map((todo,index)=>{
@@ -22,6 +27,7 @@ function DisplayNotes() {
             })
         }
     </div>
+    </>
   )
 }
 
